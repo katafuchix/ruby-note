@@ -6,6 +6,14 @@
 ・form_with Rails 5.1以降
 　URL、スコープ、モデルの組み合わせを元にformタグを作成します。
  
- 
- 
+ ・Model errors
+  Railsのモデル(model)でバリデーションエラーが発生した場合に、
+  model の errorsにエラーメッセージが設定されます。
+  さらに、full_messagesでバリデーションのエラーメッセージの配列を取得できます。
+ ```
+ - if task.errors.present?
+  ul#error_explanation
+    - task.errors.full_messages.each do |message|
+      li= message
+ ```
  
