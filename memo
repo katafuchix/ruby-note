@@ -20,6 +20,12 @@
 ・params
 　Railsでは、リクエスト情報をひとまとめにして、params[:パラメータ名]という形式で取得できます。
 
+・require 
+　 scaffold でモデルを作成した後にコントローラーに自動で作成されるっぽい
+  private
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
 
 
 
