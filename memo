@@ -27,7 +27,7 @@
     params.require(:user).permit(:name, :email)
   end
 　
- 連想配列の形でパラメーターを取得できるっぽい
+ 通常は連想配列の形でパラメーターを取得できるっぽい
 　$ curl -X POST 'http://localhost/users' -H "Content-Type: application/json" -d '{"user":{"name":"aaa","email":"bbb"}}'
 　{
   　"action" : "create",
@@ -37,6 +37,14 @@
   　},
   　"controller" : "users"
 　}
+　
+ require メソッドを利用することで、引数に設定した key の 値だけを取得することができます。 
+　$ curl -X POST 'http://localhost/users' -H "Content-Type: application/json" -d '{"user":{"name":"aaa","email":"bbb"}}'
+　{
+  　"name" : "aaa",
+  　"email" : "bbb"
+　}
+
 
 
 
