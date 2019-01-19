@@ -26,6 +26,17 @@
   def user_params
     params.require(:user).permit(:name, :email)
   end
+　
+ 連想配列の形でパラメーターを取得できるっぽい
+　$ curl -X POST 'http://localhost/users' -H "Content-Type: application/json" -d '{"user":{"name":"aaa","email":"bbb"}}'
+　{
+  　"action" : "create",
+  　"user" : {
+    　"name" : "aaa",
+    　"email" : "bbb"
+  　},
+  　"controller" : "users"
+　}
 
 
 
